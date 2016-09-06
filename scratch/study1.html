@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webGL</title>
+</head>
+<script>
+    var gl;
+    function initWebGL(canvas){
+        gl = null;
+        try {
+            gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+        } catch(e) {}
+        if(!gl) {
+            alert('webGLを初期化できません');
+            gl = null;
+        }
+        return gl;
+    }
+    function start(){
+        var canvas = document.getElementById("glcanvas");
+        gl = initWebGL(canvas);
+        console.log(gl);
+    }
+
+</script>
+<body onload="start()">
+    <canvas id="glcanvas" width="640" height="480">
+        このブラウザは
+        <code>&lt;canvas&gt;</code>要素をサポートしていません
+    </canvas>
+</body>
+</html>
