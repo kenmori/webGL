@@ -21,6 +21,22 @@
         var canvas = document.getElementById("glcanvas");
         gl = initWebGL(canvas);
         console.log(gl);
+
+        if(gl){
+            //クリアカラーを黒色、不透明に設定する
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+
+            //深度テストを有効化
+            gl.enable(gl.DEPTH_TEST);
+
+            //近くにある物体は遠くにある物体を覆い隠す
+            gl.depthFunc(gl.LEQUAL);
+
+            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+            gl.viewport(0, 0, canvas.width, canvas.height);
+
+        }
     }
 
 </script>
