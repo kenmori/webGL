@@ -13,7 +13,16 @@ window.onload = function(){
 
 	gl.clear(gl.COLOR_BUFFER_BIT);
 
-
+	function ff(x){
+		return 1 + y;
+	}
+	var fff = ff(6);
+	if(fff === 7){
+		console.log(fff);
+	} else {
+		typeof x;
+		console.log("no 7")
+	}
 	//三角形を形成する頂点のデータを受け取る
 	var triangleData = genTriangle();
 
