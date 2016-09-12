@@ -13,16 +13,6 @@ window.onload = function(){
 
 	gl.clear(gl.COLOR_BUFFER_BIT);
 
-	function ff(x){
-		return 1 + y;
-	}
-	var fff = ff(6);
-	if(fff === 7){
-		console.log(fff);
-	} else {
-		typeof x;
-		console.log("no 7")
-	}
 	//三角形を形成する頂点のデータを受け取る
 	var triangleData = genTriangle();
 
@@ -59,9 +49,9 @@ window.onload = function(){
 function genTriangle(){
 	var obj = {};
 	obj.p = [
-		0.0, 0.5, 0.0,
-		0.5, -0.5, 0.0,
-		-0.5, -0.5, 0.0
+		1.0, 1.0, 0.0,//yを1.0に
+		1.0, -1.0, 0.0,//xを1.0に
+		-1.0, -1.0, 0.0//xとyを-1.0
 	];
 	return obj;
 }
